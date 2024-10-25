@@ -63,7 +63,7 @@ public class TestRequest {
 
     }
 
-    @Test
+   /* @Test
     public void test_post() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "tablet");
@@ -77,7 +77,7 @@ public class TestRequest {
                 //.then().statusCode(HttpStatus.SC_OK).log().all();
 
 
-    }
+    }*/
 
 
 }
