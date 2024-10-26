@@ -35,19 +35,18 @@ public class TestDataDrivenRestAssuredDemo {
         jsonObject.put("price", price);
         System.out.println(jsonObject.toJSONString());
         //creating request specification
-        RequestSpecification request =given();
+        RequestSpecification request = given();
         request.contentType(ContentType.JSON);
         request.body(jsonObject.toJSONString());
         //response
-        Response response =request.post("productcatalog/products");
+        Response response = request.post("productcatalog/products");
         String responseAsString = response.getBody().asString();
-        System.out.println("Response " +responseAsString);
+        System.out.println("Response " + responseAsString);
         //Assertions
         Assert.assertTrue(responseAsString.contains(productName));
         Assert.assertTrue(responseAsString.contains(quantity.toString()));
         Assert.assertTrue(responseAsString.contains(price.toString()));
-        Assert.assertEquals(HttpStatus.SC_OK,response.getStatusCode());
-
+        Assert.assertEquals(HttpStatus.SC_CREATED, response.getStatusCode());
     }
 
     @DataProvider(name="productdata")
