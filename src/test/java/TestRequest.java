@@ -62,22 +62,4 @@ public class TestRequest {
                 .then().statusCode(HttpStatus.SC_OK).log().all();
 
     }
-
-   /* @Test
-    public void test_post() {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("name", "tablet");
-        jsonObject.put("quantity", 1);
-        jsonObject.put("price", 200);
-        System.out.println("JsonObject " + jsonObject);
-        given().contentType(ContentType.JSON).body(jsonObject.toJSONString())
-                .when().post("http://localhost:9090/productcatalog/products")
-                //.when().post("productcatalog/products")
-                .then().statusCode(HttpStatus.SC_CREATED);
-                //.then().statusCode(HttpStatus.SC_OK).log().all();
-
-
-    }*/
-
-
 }
