@@ -48,7 +48,6 @@ public class TestDataDrivenRestAssuredDemo {
         Assert.assertTrue(responseAsString.contains(price.toString()));
         Assert.assertEquals(HttpStatus.SC_OK,response.getStatusCode());
 
-
     }
 
     @DataProvider(name="productdata")
