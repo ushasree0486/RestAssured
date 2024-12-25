@@ -46,9 +46,9 @@ public class TestPutPatchDelete {
 
     @Test
     public void test_Delete_1() {
-        baseURI = "http://localhost:9090/";
+        baseURI = "http://localhost:9191/";
         given()
-                .when().delete("productcatalog/delete/18")
+                .when().delete("productcatalog/delete/45" )
                 .then().statusCode(HttpStatus.SC_OK).log().all();
 
     }

@@ -47,11 +47,11 @@ public class TestRequest {
 
     @Test
     public void test_post_1() {
-        baseURI = "http://localhost:9090/";
+        baseURI = "http://localhost:9191/";
         Map<String, Object> map = new HashMap<>();
         map.put("name", "tablet");
         map.put("quantity", Integer.valueOf(1));
-        map.put("price", Integer.valueOf(300));
+        map.put("price", Integer.valueOf(200));
         System.out.println("map " + map);
         JSONObject jsonObject = new JSONObject(map);
         System.out.println("JsonObject " + jsonObject);
@@ -59,7 +59,7 @@ public class TestRequest {
                 // .when().post("http://localhost:9090/productcatalog/products")
                 .when().post("productcatalog/products")
 
-                .then().statusCode(HttpStatus.SC_OK).log().all();
+                .then().statusCode(HttpStatus.SC_CREATED).log().all();
 
     }
 }

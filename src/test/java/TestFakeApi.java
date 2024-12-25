@@ -30,7 +30,7 @@ public class TestFakeApi {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("firstname", "JyotiK");
         jsonObject.put("subjectId", 1);
-        given().contentType(ContentType.JSON).body(jsonObject.toJSONString()).put("users/2")
+        given().contentType(ContentType.JSON).body(jsonObject.toJSONString()).put("users/3")
                 .then().statusCode(HttpStatus.SC_OK);
     }
 
@@ -47,7 +47,7 @@ public class TestFakeApi {
     @Test
     void test_Delete_01() {
         baseURI = "http://localhost:3000";
-        given().contentType(ContentType.JSON).delete("users/2")
+        given().contentType(ContentType.JSON).delete("users/f433")
                 .then().statusCode(HttpStatus.SC_OK);
 
     }

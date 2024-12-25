@@ -19,7 +19,7 @@ public class TestDataDrivenRestAssuredDemo {
         jsonObject.put("price", 200);
         System.out.println("JsonObject " + jsonObject);
         given().contentType(ContentType.JSON).body(jsonObject.toJSONString())
-                .when().post("http://localhost:9090/productcatalog/products")
+                .when().post("http://localhost:9191/productcatalog/products")
                 //.when().post("productcatalog/products")
                 //.then().statusCode(HttpStatus.SC_CREATED);
         .then().statusCode(HttpStatus.SC_CREATED).log().all();
@@ -28,7 +28,7 @@ public class TestDataDrivenRestAssuredDemo {
 
     @Test(dataProvider = "productdata")
     public void test_Post(String productName, Integer quantity, Integer price) {
-        baseURI = "http://localhost:9090";
+        baseURI = "http://localhost:9191";
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", productName);
         jsonObject.put("quantity", quantity);
